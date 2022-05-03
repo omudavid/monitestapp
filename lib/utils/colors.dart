@@ -7,4 +7,5 @@ class AppColors {
   static const secondaryBrandDarkest = Color(0xFFEAB948);
   static const primaryBrandBase = Color(0xFFE66652);
   static const secondaryBrandLightest = Color(0xFFFDF8ED);
+  static const yellowDarkest = Color(0xFFA05E03);
 }

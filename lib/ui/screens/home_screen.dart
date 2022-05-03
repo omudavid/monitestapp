@@ -237,34 +237,54 @@ class _HomeScreenState extends State<HomeScreen>
                   child: Column(
                     children: [
                       LoanSection(
-                          title: 'Overdue Loans',
-                          image: 'image',
-                          name: 'Florence Tanika',
-                          remark: '3 days overdue',
-                          amount: '₦10,555,000 Late loan ',
-                          color: AppColors.primaryBrandBase),
+                        title: 'Overdue Loans',
+                        image: 'image',
+                        name: 'Florence Tanika',
+                        remark: '3 days overdue',
+                        amount: '₦10,555,000 Late loan ',
+                        color: AppColors.primaryBrandBase,
+                        agents: [],
+                      ),
                       LoanSection(
-                          title: 'Due Today',
-                          image: 'image',
-                          name: 'Florence Tanika',
-                          remark: '3 days overdue',
-                          amount: '₦10,555,000 Late loan ',
-                          color: AppColors.primaryBrandBase),
+                        title: 'Due Today',
+                        image: 'image',
+                        name: 'Florence Tanika',
+                        remark: '3 days overdue',
+                        amount: ' Late loan ',
+                        color: AppColors.yellowDarkest,
+                        agents: state.apiResponse.activeAgents!
+                            .map((e) => e.agent!)
+                            .toList(),
+                      ),
                       LoanSection(
-                          title: 'Active Loans',
-                          image: 'image',
-                          name: 'Florence Tanika',
-                          remark: '3 days overdue',
-                          amount: '₦10,555,000 Late loan ',
-                          color: AppColors.greenDarkest),
-                      for (int i = 0; i < 100; i++)
-                        LoanSection(
-                            title: 'Active Loans',
-                            image: 'image',
-                            name: 'Florence Tanika',
-                            remark: '3 days overdue',
-                            amount: '₦10,555,000 Late loan ',
-                            color: AppColors.greenDarkest),
+                        title: 'Active Loans',
+                        image: 'image',
+                        name: 'Florence Tanika',
+                        remark: '3 days overdue',
+                        amount: '₦10,555,000  loan ',
+                        color: AppColors.greenDarkest,
+                        agents: [],
+                      ),
+
+                      LoanSection(
+                        title: 'Inactive Loan',
+                        image: 'image',
+                        name: 'Florence Tanika',
+                        remark: '',
+                        amount: 'No active loan',
+                        color: Colors.black,
+                        agents: state.apiResponse.inactiveAgents!
+                            .map((e) => e.agent!)
+                            .toList(),
+                      ),
+                      // for (int i = 0; i < 100; i++)
+                      //   LoanSection(
+                      //       title: 'Active Loans',
+                      //       image: 'image',
+                      //       name: 'Florence Tanika',
+                      //       remark: '3 days overdue',
+                      //       amount: '₦10,555,000 Late loan ',
+                      //       color: AppColors.greenDarkest),
                     ],
                   ),
                 ),
